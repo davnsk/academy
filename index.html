@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>JS</title>
+	<script src="js/script.js"></script>
+	<style>
+		form {
+			width: 500px;
+			margin: 40px auto;
+			padding: 40px 60px;
+			-webkit-box-shadow: 0px 0px 20px grey;
+					box-shadow: 0px 0px 20px grey;
+			text-align: center;
+		}
+
+		input { padding: 6px 12px; }
+		button {
+			display: block;
+			margin: 10px auto;
+			padding: 6px 12px;
+			width: 50px;
+			text-align: center;
+			font-weight: bold;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<form id="form">
+		<p id="question"></p>
+		<input type="text" id="answer">
+		<button type="submit">OK</button>
+	</form>
+
+	<script>
+		game.getQuestion();
+		document.getElementById('form').addEventListener('submit', function (ev) {
+			ev.preventDefault();
+			// код, написанный здесь будет выполняться при нажатии на ОК
+			game.checkAnswer(answer.value);
+		});
+		setTimeout(alert(game.score),15000);
+	</script>
+</body>
+</html>
